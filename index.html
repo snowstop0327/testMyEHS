@@ -9,7 +9,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="theme-color" content="#f5f6ef">
+    <meta name="theme-color" content="#F7F7DC">
     <title>Jo2Go首頁試切</title>
     <link rel="shortcut icon" href="img/favicon.png">
     <!-- Style -->
@@ -22,22 +22,60 @@
 <body>
     <!-- header -->
     <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-    <a href="#">logo</a>
-        <a href="#">註冊</a>
+        <div class="container is-flex">
+            <div class="navbar-brand">
+                <a class="navbar-item title" href="https://bulma.io">
+                    Jo2Go
+                </a>
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-primary">
+                            <strong>註冊</strong>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </nav>
     <!-- contenter -->
     <main>
+        <img class="main-pic"
+            src="https://previews.123rf.com/images/stnazkul/stnazkul1707/stnazkul170700153/82905054-man-use-smartphone-on-bean-bag-in-afternoon-freelance-conceptual-lifestyle-internet-in-everyday-life.jpg"
+            alt="主視覺">
         <div class="login-box">
-            <h2 class="is-title">好康來揪，團購賺摳摳</h2>
-            <h4 class="is-subtitle">揪好團幫你快速開團，讓大家揪好康、買好料。</h4>
-            <div class="form">我是表單！</div>
+            <div class="fixed-title">
+                <h2 class="title is-1">好康來揪，團購賺摳摳</h2>
+                <h4 class="subtitle is-3">揪好團幫你快速開團，讓大家揪好康、買好料。</h4>
+            </div>
+            <div class="card">
+                <!-- <h2 class="title is-4">趕快來加入吧！</h2> -->
+                <div class="field">
+                    <label class="label">帳號</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="請輸入ETmall的帳號">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">密碼</label>
+                    <div class="control">
+                        <input class="input" type="password"" placeholder=" 請輸入ETmall的密碼"">
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="button is-primary is-medium is-fullwidth">登入
+                    </button>
+                    <button class="button is-text is-fullwidth">揪團註冊</button>
+                </div>
+            </div>
         </div>
     </main>
     <!-- tab bar -->
 
 </body>
 <script type="text/javascript">
-    
+
 </script>
 
 </html>

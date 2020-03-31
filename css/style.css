@@ -8053,18 +8053,22 @@ body {
   font-family: MarkerFelt-Wide;
   font-weight: bold; }
 
-.login-box {
-  margin: 1rem;
-  margin-top: -150px; }
-  .login-box .card {
-    border-radius: 4px;
-    padding: 1rem;
-    background-color: #fff; }
-
 .navbar-brand {
   margin-right: auto; }
 
+.login-box .card {
+  border-radius: 4px;
+  padding: 1rem; }
+
+.form .buttons {
+  margin-top: 24px; }
+
 @media screen and (max-width: 768px) {
+  .login-box {
+    margin: 1rem;
+    margin-top: -40%; }
+    .login-box .card {
+      background-color: #fff; }
   .fixed-title {
     margin-bottom: 24px; }
     .fixed-title .title {
@@ -8101,7 +8105,7 @@ body {
     overflow: hidden; }
   .login-box {
     position: absolute;
-    bottom: 10%;
+    bottom: calc(50% - 250px);
     left: 10%; }
     .login-box .card {
       max-width: 560px;

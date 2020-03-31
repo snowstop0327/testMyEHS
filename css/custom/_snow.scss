@@ -25,17 +25,7 @@ body {
 //     background-repeat: no-repeat;
 // }
 
-.login-box {
-    // background-color: transparent;
-    margin: 1rem;
-    margin-top: -150px;
 
-    .card {
-        border-radius: 4px;
-        padding: 1rem;
-        background-color: #fff;
-    }
-}
 
 // .navbar-end,.navbar-brand {
 //     display: inline-block;
@@ -44,7 +34,30 @@ body {
     margin-right: auto;
 }
 
+.login-box {
+    .card {
+        border-radius: 4px;
+        padding: 1rem;
+    }
+}
+
+.form {
+    .buttons {
+        margin-top: 24px;
+    }
+}
+
 @include mobile {
+    .login-box {
+        // background-color: transparent;
+        margin: 1rem;
+        margin-top: -40%;
+
+        .card {
+            background-color: #fff;
+        }
+    }
+
     .fixed-title {
         margin-bottom: 24px;
 
@@ -94,7 +107,7 @@ body {
 
     .login-box {
         position: absolute;
-        bottom: 10%;
+        bottom: calc(50% - 250px);
         left: 10%;
 
         .card {

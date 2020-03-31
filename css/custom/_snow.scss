@@ -10,4 +10,17 @@ body {
     padding-left: env(safe-area-inset-left);
     min-height: 100vh;
 }
+main {
+    
+}
 
+@include desktop {
+    main {
+        background-image: url(https://previews.123rf.com/images/stnazkul/stnazkul1707/stnazkul170700153/82905054-man-use-smartphone-on-bean-bag-in-afternoon-freelance-conceptual-lifestyle-internet-in-everyday-life.jpg);
+        background-size: cover;
+        background-position: top right;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+    }
+}

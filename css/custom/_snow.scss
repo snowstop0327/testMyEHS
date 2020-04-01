@@ -11,12 +11,14 @@ body {
     /* 在 iphone x + 中本句才会生效 */
     padding-left: env(safe-area-inset-left);
     min-height: 100vh;
+    background-color: #F7F7DC;
 }
 
 .button {
-    
+
     &.is-text {
         text-decoration: none;
+
         &:hover,
         &.is-hovered,
         &:focus,
@@ -30,8 +32,21 @@ body {
 // 全域的修改-----END
 
 .navbar {
+    max-height: 50px;
+    background-color: rgba(#F7F7DC, 0.8);
+
+
     .navbar-brand {
-        margin-right: auto;
+        max-height: 50px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .navbar-end {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
     }
 }
 
@@ -46,6 +61,7 @@ body {
         font-size: 2rem;
         margin-bottom: $gap/2;
     }
+
     .subtitle {
         font-size: 1rem;
     }
@@ -53,23 +69,8 @@ body {
 
 // 加入斷點
 @include mobile {
-    body {
-        background-color: #F5F6EF;
-    }
     .navbar {
-        max-height: 50px;
-        background-color: rgba(#F5F6EF,0.8);
         backdrop-filter: blur(2px);
-        
-        .navbar-brand {
-            max-height: 50px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .navbar-end {
-            position: absolute;
-            right: 0;
-        }
     }
 
     main {
@@ -89,6 +90,7 @@ body {
         object-position: center top;
         height: calc(100vh - 208px);
     }
+
     .fixed-title {
         margin-top: 84px;
         margin-bottom: 24px;
@@ -106,32 +108,70 @@ body {
     }
 }
 
+@include tablet-only {
+    .login-box {
+        top: 150px;
+    }
+    .main-pic {
+        width: 50%;
+        max-width: 100%;
+        object-fit: cover;
+        object-position: left top;
+        height: 50vh;
+        right: 0;
+        top: 150px;
+    }
+
+}
+
 @include tablet {
+    main {
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+    }
+    .navbar {
+        min-height: 80px;
+        >.container {
+            min-height: 80px;
+        }
+        .navbar-brand {
+            min-height: 80px;
+        }
+        .navbar-end {
+            right: $gap;
+        }
+    }
     .container {
         max-width: 1024px + ($gap*2);
         padding-left: $gap;
         padding-right: $gap;
+    }
 
-    }
     .login-box {
-        max-width: 560px;
-        left: calc(50% - #{$tablet}/2 - #{$gap});
-        
+        position: relative;
+        width: 40%;
+        left: $gap;
     }
+
     .main-pic {
-        width: 55%;
-        right: -5%;
+        position: absolute;
+        width: 50%;
     }
 }
 
-@include tablet-only {
-    .login-box {
-        margin-left: $gap;
-    }
-}
+
 
 
 @include desktop {
+    .navbar {
+        background-color: transparent;
+    }
+
+    body {
+        background-color: transparent;
+    }
+
     main {
         position: relative;
         background-image: url("/img/img_bg.svg");
@@ -144,9 +184,11 @@ body {
     }
 
     .login-box {
+        max-width: $desktop/2;
         position: absolute;
-        bottom: calc(50vh - 200px);
-        margin-left: auto;
+        bottom: 15%;
+        margin-left: $gap;
+        top: auto;
         left: calc(50% - #{$desktop}/2);
 
         .form {
@@ -166,9 +208,19 @@ body {
             margin-bottom: 36px;
         }
     }
+
     .main-pic {
         right: 0;
         width: 45%;
+    }
+}
+
+@include widescreen {
+    .main-pic {
+        top: 100px;
+    }
+    .login-box {
+        margin-left: 0;
     }
 }
 
@@ -177,9 +229,9 @@ body {
     .main-pic {
         bottom: calc(50vh - 460px);
     }
+
     .login-box {
+        bottom: calc(50vh - 200px);
         margin-left: 0;
     }
 }
-
-

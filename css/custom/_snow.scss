@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+// 全域的修改-----START
+
 body {
     padding-top: env(safe-area-inset-top);
     padding-right: env(safe-area-inset-right);
@@ -10,4 +12,174 @@ body {
     padding-left: env(safe-area-inset-left);
     min-height: 100vh;
 }
+
+.button {
+    
+    &.is-text {
+        text-decoration: none;
+        &:hover,
+        &.is-hovered,
+        &:focus,
+        &.is-focused {
+            color: $primary;
+            background-color: transparent;
+        }
+    }
+}
+
+// 全域的修改-----END
+
+.navbar {
+    .navbar-brand {
+        margin-right: auto;
+    }
+}
+
+.form {
+    .buttons {
+        margin-top: $gap/2;
+    }
+}
+
+.fixed-title {
+    .title {
+        font-size: 2rem;
+        margin-bottom: $gap/2;
+    }
+    .subtitle {
+        font-size: 1rem;
+    }
+}
+
+// 加入斷點
+@include mobile {
+    body {
+        background-color: #F5F6EF;
+    }
+    .navbar {
+        max-height: 50px;
+        background-color: rgba(#F5F6EF,0.8);
+        backdrop-filter: blur(2px);
+        
+        .navbar-brand {
+            max-height: 50px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .navbar-end {
+            position: absolute;
+            right: 0;
+        }
+    }
+
+    main {
+        width: 100%;
+        overflow-x: hidden;
+        position: relative;
+    }
+
+    .main-pic {
+        position: absolute;
+        top: 208px;
+        opacity: 0.9;
+        z-index: 0;
+        width: 100%;
+        max-width: 120%;
+        object-fit: cover;
+        object-position: center top;
+        height: calc(100vh - 208px);
+    }
+    .fixed-title {
+        margin-top: 84px;
+        margin-bottom: 24px;
+        margin-left: $gap/2;
+        margin-right: $gap/2;
+    }
+
+    .form {
+        position: relative;
+        background-color: white;
+        padding: $gap/2;
+        margin: $gap/2;
+        margin-top: calc(90vh - 300px);
+        margin-bottom: 20vh;
+    }
+}
+
+@include tablet {
+    .container {
+        max-width: 1024px + ($gap*2);
+        padding-left: $gap;
+        padding-right: $gap;
+
+    }
+    .login-box {
+        max-width: 560px;
+        left: calc(50% - #{$tablet}/2 - #{$gap});
+        
+    }
+    .main-pic {
+        width: 55%;
+        right: -5%;
+    }
+}
+
+@include tablet-only {
+    .login-box {
+        margin-left: $gap;
+    }
+}
+
+
+@include desktop {
+    main {
+        position: relative;
+        background-image: url("/img/img_bg.svg");
+        background-position: top right;
+        width: 100%;
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: 100vw;
+        overflow: hidden;
+    }
+
+    .login-box {
+        position: absolute;
+        bottom: calc(50vh - 200px);
+        margin-left: auto;
+        left: calc(50% - #{$desktop}/2);
+
+        .form {
+            max-width: 380px;
+            // padding: 48px;
+            // background-color: rgba($white, .8);
+            // backdrop-filter: blur(10px);
+        }
+
+    }
+
+    .fixed-title {
+        margin-bottom: 24px;
+
+        h2.title {
+            font-size: 4rem;
+            margin-bottom: 36px;
+        }
+    }
+    .main-pic {
+        right: 0;
+        width: 45%;
+    }
+}
+
+
+@include fullhd {
+    .main-pic {
+        bottom: calc(50vh - 460px);
+    }
+    .login-box {
+        margin-left: 0;
+    }
+}
+
 

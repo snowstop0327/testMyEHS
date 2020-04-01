@@ -87,7 +87,7 @@
     @content
 
 =tablet-only
-  @media screen and (min-width: $tablet) and (max-width: $desktop - 1px)
+  @media screen and (min-width: $tablet) and (max-width: $desktop)
     @content
 
 =touch
@@ -95,7 +95,7 @@
     @content
 
 =desktop
-  @media screen and (min-width: $desktop)
+  @media screen and (min-width: $desktop + 1px)
     @content
 
 =desktop-only
